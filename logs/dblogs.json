@@ -1,0 +1,6 @@
+{"type": "ERROR", "timestamp": 1598713623.989821, "endpoint": "getTickets", "request": "None", "session": "None", "error": "local variable 't' referenced before assignment"}
+{"type": "ERROR", "timestamp": 1598713962.8126364, "endpoint": "getTickets", "request": "None", "session": "None", "error": "type object 'Ticket' has no attribute 'objects'"}
+{"type": "ERROR", "timestamp": 1598714422.0691369, "endpoint": "getUser", "request": "None", "session": "None", "error": "object of type 'Ticket' has no len()"}
+{"type": "ERROR", "timestamp": 1598714469.651424, "endpoint": "getAllTickets", "request": "None", "session": "None", "error": "object of type 'QuerySet' has no len()"}
+{"type": "ERROR", "timestamp": 1598714555.736084, "endpoint": "getTickets", "request": "None", "session": "None", "error": "'timing'"}
+{"type": "ERROR", "timestamp": 1598714623.8995776, "endpoint": "updateTicket", "request": "None", "session": "None", "error": "'year'"}
