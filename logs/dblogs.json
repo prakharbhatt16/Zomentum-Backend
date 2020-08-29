@@ -4,3 +4,9 @@
 {"type": "ERROR", "timestamp": 1598714469.651424, "endpoint": "getAllTickets", "request": "None", "session": "None", "error": "object of type 'QuerySet' has no len()"}
 {"type": "ERROR", "timestamp": 1598714555.736084, "endpoint": "getTickets", "request": "None", "session": "None", "error": "'timing'"}
 {"type": "ERROR", "timestamp": 1598714623.8995776, "endpoint": "updateTicket", "request": "None", "session": "None", "error": "'year'"}
+{"type": "ERROR", "timestamp": 1598715683.0121937, "endpoint": "createTicket", "request": "None", "session": "None", "error": "argument of type 'datetime.datetime' is not iterable"}
+{"type": "ERROR", "timestamp": 1598715908.123432, "endpoint": "updateTicket", "request": "None", "session": "None", "error": "hour must be in 0..23"}
+{"type": "ERROR", "timestamp": 1598715921.7096622, "endpoint": "updateTicket", "request": "None", "session": "None", "error": "hour must be in 0..23"}
+{"type": "ERROR", "timestamp": 1598716133.7557206, "endpoint": "getTicket", "request": "None", "session": "None", "error": ""}
+{"type": "ERROR", "timestamp": 1598716194.712373, "endpoint": "getTicket", "request": "None", "session": "None", "error": ""}
+{"type": "ERROR", "timestamp": 1598716209.2887642, "endpoint": "getTickets", "request": "None", "session": "None", "error": "day is out of range for month"}

@@ -42,6 +42,14 @@ def classToDict(obj, default=None):
             final[key] = getattr(obj, key)
             if type(type(final[key])) == pymodm.base.models.MongoModelMetaclass:
                 final[key] = classToDict(final[key])
+            if type(final[key]) == datetime:
+                final[key] = {
+                    'year' : final[key].year,
+                    'month' : final[key].month,
+                    'day' : final[key].day,
+                    'hour' : final[key].hour,
+                    'minute' : final[key].minute
+                }
         else:
             final[key] = default
     return final

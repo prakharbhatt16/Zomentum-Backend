@@ -1,0 +1,6 @@
+flask
+flask-sessionstore
+flask-restful
+apscheduler<3.0.0
+pymodm
+pymongo

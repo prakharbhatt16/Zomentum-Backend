@@ -12,19 +12,18 @@ class Booking(Resource):
         Arguments:
             if get all:
                 'ticketId' : <str : 0 = all>
-                'timing' : {
-                    'year' : <int>
-                    'month' : <int>
-                    'day' : <int>
-                    'hour' : <int>
-                }
+                'year' : <int>
+                'month' : <int>
+                'day' : <int>
+                'hour' : <int>
             else:
                 'ticketId' : <str : != 0>
         """
         obj = dict(request.args)
         
         try:
-            if obj['ticketId'] == 0:
+            if obj['ticketId'] == '0':
+                obj['timing'] = obj
                 results, status = self.db.getTickets(obj)
             else:
                 results, status = self.db.getTicket(obj)
@@ -67,7 +66,13 @@ class Booking(Resource):
         Request format:
         {
             if update:
-                "ticketId" : <str ObjectId>
+                "ticketId" : <str ObjectId>,
+                'timing' : {
+                        'year' : <int>
+                        'month' : <int>
+                        'day' : <int>
+                        'hour' : <int>
+                    }
             else create:
                 "user" : <str> {Name of the user}
                 "phone" : <10 digit integer string> {Phone number of the user}
