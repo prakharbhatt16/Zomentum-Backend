@@ -31,17 +31,6 @@ app.secret_key = os.urandom(32)
 ################################################### Utility Functions #################################################
 #######################################################################################################################
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template("/errors/404.html")
-
-@app.errorhandler(403)
-def page_unauthorized(e):
-    return render_template("/errors/403.html")
-
-@app.errorhandler(500)
-def internal_server_error(e):
-    return render_template("/errors/500.html")
 
 def manage_error(func):
     @wraps(func)
