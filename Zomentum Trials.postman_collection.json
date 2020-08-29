@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "0d412ed9-eb83-4f7c-bab4-6c3be9d9243a",
+		"name": "Zomentum Trials",
+		"description": "Tests for Zomentum Movie Booking System API Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Ticket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "daaec810-03db-435b-9777-6e6e785f197b",
+						"exec": [
+							"pm.test(\"Ticket Created Successfully!\", function () {",
+							"  pm.expect(pm.response.text()).to.include('ticketId');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\":\"prakhar\",\n    \"phone\":\"9999177764\",\n    \"timing\" : {\n        \"year\" : 2020,\n        \"month\" : 8,\n        \"day\" : 29,\n        \"hour\"  : 20\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8080/api/v1/booking",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					]
+				},
+				"description": "Create a ticket by specifying Username, Phone Number, and a dictionary detailing date and time"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ticket Timing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4634d6f4-7a52-4623-857e-28d5e936ee5d",
+						"exec": [
+							"pm.test(\"Ticket Updated Successfully!\", function () {",
+							"  pm.expect(pm.response.text()).to.include('ticketId');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticketId\" : \"5f4a775efc4a242c0973413e\",\n    \"timing\" : {\n        \"year\" : 2020,\n        \"month\" : 8,\n        \"day\" : 29,\n        \"hour\"  : 23\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8080/api/v1/booking",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					]
+				},
+				"description": "Update the timing of a ticket, given the ticketId and the new Timing in json form"
+			},
+			"response": []
+		},
+		{
+			"name": "View Tickets of Timing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d667e167-5d73-44a1-a18c-a4296538f411",
+						"exec": [
+							"pm.test(\"Tickets returned successfully!\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8080/api/v1/booking?ticketId=0&year=2020&month=8&day=29&hour=20",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "ticketId",
+							"value": "0",
+							"description": "We specify Ticket ID as 0 to signify we mean all tickets"
+						},
+						{
+							"key": "year",
+							"value": "2020"
+						},
+						{
+							"key": "month",
+							"value": "8"
+						},
+						{
+							"key": "day",
+							"value": "29"
+						},
+						{
+							"key": "hour",
+							"value": "20"
+						}
+					]
+				},
+				"description": "Given a Timing json object, Return all Ticket IDs "
+			},
+			"response": []
+		},
+		{
+			"name": "View Ticket, User Info from TicketId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be48d4fe-9c33-4141-ae41-752732e64478",
+						"exec": [
+							"pm.test(\"Ticket Returned Successfully!\", function () {",
+							"  pm.expect(pm.response.text()).to.include('ticketId');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8080/api/v1/booking?ticketId=5f4a7cf1274f5d0b3acf59ce",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "ticketId",
+							"value": "5f4a7cf1274f5d0b3acf59ce"
+						}
+					]
+				},
+				"description": "Get information about the user, ticket from ticketId"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ticket from ticketId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4ef299e2-10e8-4795-b760-a6950bf36777",
+						"exec": [
+							"pm.test(\"Ticket Deleted Successfully!\", function () {",
+							"  pm.expect(pm.response.text()).to.include('Done');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticketId\" : \"5f4a7cf1274f5d0b3acf59ce\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8080/api/v1/booking",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					]
+				},
+				"description": "Given a ticketId, delete the ticket!"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
