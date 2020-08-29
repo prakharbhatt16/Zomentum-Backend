@@ -10,3 +10,6 @@
 {"type": "ERROR", "timestamp": 1598716133.7557206, "endpoint": "getTicket", "request": "None", "session": "None", "error": ""}
 {"type": "ERROR", "timestamp": 1598716194.712373, "endpoint": "getTicket", "request": "None", "session": "None", "error": ""}
 {"type": "ERROR", "timestamp": 1598716209.2887642, "endpoint": "getTickets", "request": "None", "session": "None", "error": "day is out of range for month"}
+{"type": "ERROR", "timestamp": 1598717093.319905, "endpoint": "getTicket", "request": "None", "session": "None", "error": ""}
+{"type": "ERROR", "timestamp": 1598717130.5786927, "endpoint": "deleteTicket", "request": "None", "session": "None", "error": ""}
+{"type": "ERROR", "timestamp": 1598717153.3036222, "endpoint": "getTicket", "request": "None", "session": "None", "error": ""}
